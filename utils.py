@@ -9,13 +9,15 @@ from typing import Dict, List
 
 def get_model_type_dict(model_type: str):
     # This is a nono because I want to link my project with auto1111 model directory. doing it anyway
-    model_dir = {
-        "sd":"/home/chunt/stable-diffusion-webui/models/Stable-diffusion/",
-        "lora":"/home/chunt/stable-diffusion-webui/models/Lora/",
-        "vae":"/home/chunt/stable-diffusion-webui/models/VAE/",
-        "segment":"./models/segment/",
-    }
+    model_dir = {"sd":"./","lora":"./", "vae":"./","segment":"./"}
+    """
+    "sd":"/home/chunt/stable-diffusion-webui/models/Stable-diffusion/",
+    "lora":"/home/chunt/stable-diffusion-webui/models/Lora/",
+    "vae":"/home/chunt/stable-diffusion-webui/models/VAE/",
+    "segment":"./models/segment/",
 
+    }
+    """
     model_dir = model_dir[model_type]
     model_dict = {"None":"None"}
     for file in os.listdir(model_dir):
