@@ -35,7 +35,6 @@ def segment_tab(device):
             gr.Markdown("# Inpaint with Seg Mask")
             inpaint_model_type = gr.Dropdown(choices=list(utils.get_model_type_dict("sd").keys()), value="None", interactive=True, label="Select Inpainting Model")
             inpaint_lora_type = gr.Dropdown(choices=list(utils.get_model_type_dict("lora").keys()), value="None", interactive=True, label="Select LoRA Model")
-            inpaint_vae_model_type = gr.Dropdown(choices=list(utils.get_model_type_dict("vae").keys()), value="None", interactive=True, label="Select VAE" )
         with gr.Row(equal_height=True):
             with gr.Column():
                 with gr.Row():

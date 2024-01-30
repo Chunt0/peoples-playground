@@ -7,6 +7,7 @@ import numpy as np
 import gc
 from typing import List
 import utils
+
 # Segment Anything
 def generate_point_mask(image, selected_points, model_type, device, mask_thresh):
     seg_model_dict = utils.get_model_type_dict("segment")
@@ -111,7 +112,14 @@ def run_mask(image, selected_points, model_type, device, boxes, mask_thresh):
         print("Something went wrong with your selected points")
         return None, None
 
+
+
+#################################################################################################
+
 # Inpaint
+
+#################################################################################################
+
 def get_sd_pipe(inpaint_model_type, lora_model_type):  
     sd_model_dict = utils.get_model_type_dict("sd")
     lora_model_dict = utils.get_model_type_dict("lora")

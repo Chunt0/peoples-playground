@@ -8,22 +8,27 @@ import os
 from typing import Dict, List
 
 def get_model_type_dict(model_type: str):
-    # This is a nono because I want to link my project with auto1111 model directory. doing it anyway
-    model_dir = {"sd":"./","lora":"./", "vae":"./","segment":"./"}
-    """
-    "sd":"/home/chunt/stable-diffusion-webui/models/Stable-diffusion/",
-    "lora":"/home/chunt/stable-diffusion-webui/models/Lora/",
-    "vae":"/home/chunt/stable-diffusion-webui/models/VAE/",
-    "segment":"./models/segment/",
+    model_dir = {
 
+    "sd":"./models/sd/",
+    "lora":"./models/lora/",
+    "segment":"./models/segment/",
     }
-    """
+
     model_dir = model_dir[model_type]
     model_dict = {"None":"None"}
-    for file in os.listdir(model_dir):
-        name = file.split(".")[0]
-        model_dict[name] = model_dir+file
+    if model_type!="sd":
+        for file in os.listdir(model_dir):
+            name = file.split(".")[0]
+            model_dict[name] = model_dir+file
+    else:
+        with open("./models/sd/models.txt", 'r') as f:
+            for line in f.readlines():
+                model_repo_id = line.strip()
+                name = line.split('/')[1]
+                model_dict[name] = model_repo_id 
     return model_dict
+        
     
    
 

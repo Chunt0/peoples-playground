@@ -3,3 +3,4 @@ output/
 img/
 examples/
 __pycache__/
+/outdated
