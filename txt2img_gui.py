@@ -1,16 +1,12 @@
 import gradio as gr
-from txt2img import load_model, run_txt2img
+from txt2img import run_txt2img
 import utils
 
 def txt2img_tab():
     with gr.Tab("Txt2Img"):
-        txt2img_model = gr.State(value=None)
-        txt2img_refiner = gr.State(value=None)
         with gr.Row():
             gr.Markdown("Select Model")
-            txt2img_model_type = gr.Dropdown(choices=list(utils.get_model_type_dict("sd").keys()), value="None", interactive=True, label="Select Inpainting Model")
             txt2img_lora_type = gr.Dropdown(choices=list(utils.get_model_type_dict("lora").keys()), value="None", interactive=True, label="Select LoRA Model")
-            txt2img_vae_model_type = gr.Dropdown(choices=["None"], value="None", interactive=True, label="Select VAE" )
         with gr.Row():
             with gr.Column():
                 with gr.Row():
@@ -30,10 +26,7 @@ def txt2img_tab():
     
     txt2img_button.click(
         fn=run_txt2img,
-        inputs=[txt2img_model, 
-                txt2img_refiner,
-                txt2img_model_type,
-                txt2img_lora_type,
+        inputs=[txt2img_lora_type,
                 txt2img_prompt,
                 txt2img_neg_prompt,
                 txt2img_num_steps,

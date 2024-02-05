@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>putty - ai</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="navbar">
+        <nav>
+          <a href="index.html">putty-ai</a>
+	        <a href="#about">about</a>
+	        <a href="#artists">artists</a>
+	        <a href="#contact">contact</a>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div id="top-pic"> 
+            <img src="assets/puttyai.png" alt="logo">
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="image-container">
+      <img id="dynamicImage" src="assets/banner/1.png" alt="banner">
+    </div>
+
+    <div id="about" class="hero">
+      <div>
+	      <h1>accelerating art and design with emerging technologies</h1>
+        <p>
+          in the past four years, we have witnessed a significant surge in image generation. pioneers like openai and midjourney have captivated the world with their innovations, demonstrating the vast potential of ai in creative fields. intrigued by these advancements, artists have eagerly adopted these tools, aiming to accelerate and enhance their creative processes. however, while initially impressive, many artists soon realize that these services, in their pursuit of universal applicability, often fall short in addressing the unique and diverse needs of individual creators.
+          we are here to help.<br><br>recognizing that creativity is not a one-size-fits-all endeavor, our mission is to bridge the gap between the artist and image generation, ensuring that this powerful tool aligns perfectly with your vision and artistic process. <br><br>we collaborate closely with artists, crafting fine-tuned, bespoke models that not only resonate with their individual style but also amplify their creative potential.
+          at putty-ai, we offer more than a service; we provide a partnership. a partnership where your artistic vision is central, and our technology is the means to realize it. this is not about replacing the artist's touch; it's about enhancing it with ai that understands and adapts to your unique style and needs.
+          come see how we can assist you in harnessing this emerging technology.
+        </p>
+      </div>
+    </div>
+
+    <div id="artists" class="hero">
+      <div>
+        <a href="#artists" onclick="changeImage('suki-iitsu'); return false;"><h1>suki iitsu</h1></a>
+        <br>
+        <a href="#artists" onclick="changeImage('dee-williams'); return false;"><h1>dee williams</h1></a>
+        <br>
+        <a href="#artists" onclick="changeImage('robert-dowel'); return false;"><h1>robert dowel</h1></a>
+        <br>
+        <a href="#artists" onclick="changeImage('spacecat'); return false;"><h1>spacecat</h1></a>
+        <br>
+        <a href="#artists" onclick="changeImage('raoul-agnel'); return false;"><h1>raoul agnel</h1></a>
+        <br>
+      </div>
+      <div>
+        <img id="workImage" src="assets/suki-iitsu/1.png" alt="work" onclick="nextImage()">
+      </div>
+    </div>
+    
+    <div class="hero">
+      <div>
+        <br><br><br>
+          <a href="faq.html"><h1>click here to learn more</h1></a>
+        <br>
+      </div>
+    </div>
+
+    <div id="contact" class="hero">
+      <div>
+        <h1>contact</h1>
+        <br>
+        <h3>email <br> putty-ai@proton.me</h3>
+        <h3>x <br><a href="https://x.com/putty_ai">putty_ai</a></h3>
+      </div>
+    </div>
+    <script>
+      var currentArtist = 'suki-iitsu';
+      var currentImage = 1;
+      var totalImages = 4; // Update this to the total number of images per artist
+      
+      function changeImage(artistName) {
+          currentArtist = artistName;
+          currentImage = 1; // Reset to the first image
+          updateImage();
+      }
+      
+      function nextImage() {
+          currentImage++;
+          if (currentImage > totalImages) {
+              currentImage = 1; // Loop back to the first image
+          }
+          updateImage();
+      }
+      
+      function updateImage() {
+          var imagePath = "assets/" + currentArtist + "/" + currentImage + ".png";
+          document.getElementById("workImage").src = imagePath;
+      }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+          var currentImage = 1;
+          var totalImages = 10; // Total number of images you have (1.png to 5.png)
+          
+          setInterval(function() {
+              currentImage++;
+              if (currentImage > totalImages) {
+                  currentImage = 1; // Reset to first image
+              }
+              document.getElementById('dynamicImage').src = 'assets/banner/' + currentImage + '.png';
+          }, 2500);
+      });
+    </script>
+      
+    </body>
+</html>
