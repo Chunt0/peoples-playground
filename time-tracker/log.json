@@ -1,0 +1,12 @@
+{
+    "proj1": {
+        "time": "0",
+        "log": "created|2024:02:18:20:14:36\nstart|consult|2024:02:18:20:14:41\nstop|consult|2024:02:18:20:15:58\nstart|dataprep|2024:02:18:20:17:50\nstop|dataprep|2024:02:18:20:18:04\nstart|training|2024:02:18:20:19:07\nstop|training|2024:02:18:20:19:12\nstart|training|2024:02:18:20:19:15\nstop|training|2024:02:18:20:20:11\nstart|training|2024:02:18:20:20:29\nstop|training|2024:02:18:20:21:02\nstart|training|2024:02:18:20:21:13\nstop|training|2024:02:18:20:27:31",
+        "note": ""
+    },
+    "proj2": {
+        "time": 0.08722222222222223,
+        "log": "created|2024:02:18:20:32:46\nstart|dataprep|2024:02:18:20:32:49\nstop|dataprep|2024:02:18:20:32:57\nstart|dataprep|2024:02:18:20:33:07\nstop|dataprep|2024:02:18:20:34:07\nstart|dataprep|2024:02:18:20:34:12\nstop|dataprep|2024:02:18:20:35:49\nstart|training|2024:02:18:20:35:56\nstop|training|2024:02:18:20:36:53\nstart|training|2024:02:18:20:38:57\nstop|training|2024:02:18:20:40:29\nstart|training|2024:02:18:20:40:34",
+        "note": ""
+    }
+}
